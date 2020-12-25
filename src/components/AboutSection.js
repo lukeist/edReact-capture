@@ -1,26 +1,48 @@
 import React from "react";
 import home1 from "../img/home1.png";
-// Styles
-import styled from "styled-components";
+// // Styles
+// import styled from "styled-components";
+// Framer Motion
+import { motion } from "framer-motion";
 import { About, Description, Image, Hide } from "../Styles";
 
 const AboutSection = () => {
+  // const titleAnim = {
+  //   hidden: { opacity: 0 },
+  //   show: { opacity: 1, transition: { duration: 2 } },
+  // };
+  // const container = {
+  //   hidden: { x: 100 },
+  //   show: {
+  //     x: 0,
+  //     transition: { duration: 2, ease: "easeOut", staggerChildren: 1 },
+  //   },
+  // };
   return (
     <About>
       <Description>
-        <div className="title">
+        <motion.div
+        // variants={container}
+        // initial="hidden"
+        // animate="show"
+        // className="title"
+        >
           <Hide>
-            <h2>We work to make</h2>
+            <motion.h2
+            // variants={titleAnim} initial="hidden" animate="show"
+            >
+              We work to make
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2>
+            <motion.h2>
               your <span>dreams</span> come
-            </h2>
+            </motion.h2>
           </Hide>
           <Hide>
-            <h2>true.</h2>
+            <motion.h2>true.</motion.h2>
           </Hide>
-        </div>
+        </motion.div>
         <p>
           Contact us for any questions about our service. We look forward to
           hearing from you!
