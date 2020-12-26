@@ -5,6 +5,7 @@ import home1 from "../img/home1.png";
 // Framer Motion
 import { motion } from "framer-motion";
 import { About, Description, Image, Hide } from "../Styles";
+// import { titleAni } from "../animation";
 
 const AboutSection = () => {
   // const titleAnim = {
@@ -29,18 +30,25 @@ const AboutSection = () => {
         >
           <Hide>
             <motion.h2
+            // variants={titleAni}
             // variants={titleAnim} initial="hidden" animate="show"
             >
               We work to make
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2>
+            <motion.h2
+            // variants={titleAni}
+            >
               your <span>dreams</span> come
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2>true.</motion.h2>
+            <motion.h2
+            // variants={titleAni}
+            >
+              true.
+            </motion.h2>
           </Hide>
         </motion.div>
         <p>
