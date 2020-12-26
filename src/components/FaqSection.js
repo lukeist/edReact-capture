@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 // Style
 import styled from "styled-components";
 import { About } from "../Styles";
-
+import Toggle from "./Toggle";
 const FaqSection = () => {
+  const [faqToggle, setFaqToggle] = useState(false);
+  console.log(faqToggle);
   return (
     <Faq>
       <h2>
@@ -12,12 +14,14 @@ const FaqSection = () => {
       <div className="question">
         <h4>How Do I Start?</h4>
         <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias
-            possimus veniam eligendi temporibus quidem enim ut labore cum earum
-            corporis.
-          </p>
+          <Toggle>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias
+              possimus veniam eligendi temporibus quidem enim ut labore cum
+              earum corporis.
+            </p>
+          </Toggle>
         </div>
         <div className="faq-line"></div>
       </div>
