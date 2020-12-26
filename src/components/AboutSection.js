@@ -5,7 +5,7 @@ import home1 from "../img/home1.png";
 // Framer Motion
 import { motion } from "framer-motion";
 import { About, Description, Image, Hide } from "../Styles";
-// import { titleAni } from "../animation";
+import { fade, titleAni, photoAni } from "../animation";
 
 const AboutSection = () => {
   // const titleAnim = {
@@ -30,35 +30,29 @@ const AboutSection = () => {
         >
           <Hide>
             <motion.h2
-            // variants={titleAni}
-            // variants={titleAnim} initial="hidden" animate="show"
+              variants={titleAni}
+              // variants={titleAnim} initial="hidden" animate="show"
             >
               We work to make
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2
-            // variants={titleAni}
-            >
+            <motion.h2 variants={titleAni}>
               your <span>dreams</span> come
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2
-            // variants={titleAni}
-            >
-              true.
-            </motion.h2>
+            <motion.h2 variants={titleAni}>true.</motion.h2>
           </Hide>
         </motion.div>
-        <p>
+        <motion.p variants={fade}>
           Contact us for any questions about our service. We look forward to
           hearing from you!
-        </p>
-        <button>Contact Us</button>
+        </motion.p>
+        <motion.button variants={fade}>Contact Us</motion.button>
       </Description>
       <Image>
-        <img src={home1} alt="guy with a camera" />
+        <motion.img variants={photoAni} src={home1} alt="guy with a camera" />
       </Image>
     </About>
   );
