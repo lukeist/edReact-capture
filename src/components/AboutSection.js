@@ -7,6 +7,9 @@ import { motion } from "framer-motion";
 import { About, Description, Image, Hide } from "../Styles";
 import { fade, titleAni, photoAni } from "../animation";
 
+//Wave
+import Wave from "./Wave";
+
 const AboutSection = () => {
   // const titleAnim = {
   //   hidden: { opacity: 0 },
@@ -54,6 +57,7 @@ const AboutSection = () => {
       <Image>
         <motion.img variants={photoAni} src={home1} alt="guy with a camera" />
       </Image>
+      <Wave />
     </About>
   );
 };
