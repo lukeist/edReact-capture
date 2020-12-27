@@ -8,10 +8,29 @@ import home2 from "../img/home2.png";
 // Styles
 import { About, Description, Image, Hide } from "../Styles";
 import styled from "styled-components";
+import { useScroll } from "./useScroll";
+import { scrollReveal } from "../animation";
+
+// TEST
+// import { useInView } from "react-intersection-observer";
+// import { useAnimation } from "framer-motion";
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
+  // const controls = useAnimation();
+  // const [element, view] = useInView({ threshold: 0.5 });
+  // if (view) {
+  //   controls.start("show");
+  // } else {
+  //   controls.start("hidden");
+  // }
   return (
-    <Services>
+    <Services
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
       <Description>
         <h2>
           High <span>quality</span> services.
@@ -58,7 +77,6 @@ const Services = styled(About)`
   h2 {
     padding-bottom: 5rem;
   }
-
   p {
     width: 70%;
     padding: 2rem 0rem 4rem 0rem;
