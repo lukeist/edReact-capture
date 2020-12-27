@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 body{
     font-family: 'Inter', sans-serif;
     background: #1b1b1b;
+    overflow-x: hidden;
 }
 
 button{
@@ -51,6 +52,14 @@ p{
     line-height: 150%;
 }
 
+html{
+@media (max-width: 1700px){
+    font-size: 75%;
+    }
+    @media (max-width: 1300px){
+    font-size: 80%;
+    }
+}
 `;
 
 export default GlobalStyle;
