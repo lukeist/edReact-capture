@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 const Nav = () => {
+  const { pathname } = useLocation();
+
   return (
     <StyledNav>
       <h1>
@@ -12,13 +14,28 @@ const Nav = () => {
       </h1>
       <ul>
         <li>
-          <Link to="/">1. About Us</Link>
+          <Link to="/">About Us</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/" ? "65%" : "0%" }}
+          />
         </li>
         <li>
-          <Link to="/work">2. Our works</Link>
+          <Link to="/work">Our works</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/work" ? "65%" : "0%" }}
+          />
         </li>
         <li>
-          <Link to="/contact">3. Contact Us</Link>
+          <Link to="/contact">Contact Us</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/contact" ? "65%" : "0%" }}
+          />
         </li>
       </ul>
     </StyledNav>
@@ -31,7 +48,7 @@ const StyledNav = styled.nav`
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 10rem;
+  padding: 0rem 10rem;
   background: #282828;
   position: sticky;
   top: 0;
@@ -50,7 +67,7 @@ const StyledNav = styled.nav`
     font-weight: lighter;
   }
   li {
-    padding-left: 8rem;
+    padding-left: 3rem;
     position: relative;
   }
   @media (max-width: 1300px) {
@@ -70,4 +87,17 @@ const StyledNav = styled.nav`
     }
   }
 `;
+
+const Line = styled(motion.div)`
+  height: 0.3rem;
+  background: #23d997;
+  width: 5%;
+  position: absolute;
+  bottom: -100%;
+  left: 35%;
+  @media (max-width: 1300px) {
+    left: 0%;
+  }
+`;
+
 export default Nav;
