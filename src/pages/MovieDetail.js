@@ -68,6 +68,10 @@ const HeadLine = styled.div`
     top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
+    @media (max-width: 1300px) {
+      text-align: center;
+      font-size: 3rem;
+    }
   }
   img {
     width: 100%;
@@ -82,6 +86,14 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 1300px) {
+    martgin-top: 5rem;
+    margin: 5rem 2rem 0rem 2rem;
+    display: block;
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const AwardStyle = styled.div`
@@ -97,6 +109,12 @@ const AwardStyle = styled.div`
   }
   p {
     padding: 2rem 0rem;
+  }
+  @media (max-width: 1300px) {
+    padding: 1rem;
+    /* h3 {
+      font-size: 2rem; */
+    }
   }
 `;
 // Award Component
